@@ -7,6 +7,16 @@ const AboutPage = () => {
   return (
     <main>
       <PageHero title="about" />
+      <Wrapper className="page section section-center">
+        <img src={aboutImg} alt="nice desk" />
+        <article>
+          <div className="title">
+            <h2>Our Story</h2>
+            <div className="underline"></div>
+            <p>lorem kjhkhkjh kjh kjh khk hkhk hkh kjhk jhkjh kjh</p>
+          </div>
+        </article>
+      </Wrapper>
     </main>
   );
 };

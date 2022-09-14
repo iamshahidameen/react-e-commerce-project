@@ -1,10 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
-import { services } from '../utils/constants'
+import React from 'react';
+import styled from 'styled-components';
+import { services } from '../utils/constants';
 
 const Services = () => {
-  return <h4>services </h4>
-}
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <article className="header">
+          <h3>
+            Custom Furniture <br />
+            Built only for you
+          </h3>
+          <p>
+            Lorem Ipsum huhbj duhkjbd kubkjdb jkbdkjb kjbdkb Lorem Ipsum huhbj
+            duhkj orem Ipsum
+          </p>
+        </article>
+        <div className="services-center"></div>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   h3,
@@ -68,5 +84,5 @@ const Wrapper = styled.section`
       transform: translateY(5rem);
     }
   }
-`
-export default Services
+`;
+export default Services;

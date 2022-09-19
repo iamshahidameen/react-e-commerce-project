@@ -12,11 +12,23 @@ const Services = () => {
             Built only for you
           </h3>
           <p>
-            Lorem Ipsum huhbj duhkjbd kubkjdb jkbdkjb kjbdkb Lorem Ipsum huhbj
-            duhkj orem Ipsum
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit
+            autem unde numquam nisi
           </p>
         </article>
-        <div className="services-center"></div>
+        <div className="services-center">
+          {services.map((service) => {
+            const { id, icon, title, text } = service;
+            return (
+              <article className="service">
+                <span className="icon">{icon} </span>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </Wrapper>
   );

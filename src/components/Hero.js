@@ -10,7 +10,9 @@ const Hero = () => {
       <article className="content">
         <h1>Design your comfort zone</h1>
         <p>
-          Lorem ipsum git smoth jyte Lorem ipsum git smipsum git smoth jyte L{' '}
+          Voluptatese Perferendis corrupti reiciendis nesciunt rerum velit autem
+          undeLorem ipsum, dolor sit amet consectetur adipisicing elit. numquam
+          nisi
         </p>
         <Link to="/products" className="btn hero-btn">
           Shop Now

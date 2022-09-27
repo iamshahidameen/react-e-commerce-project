@@ -60,11 +60,12 @@ export const ProductsProvider = ({ children }) => {
   };
   useEffect(() => {
     fetchProducts(url);
-    fetchSingleProduct(url);
   }, []);
 
   return (
-    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
+    <ProductsContext.Provider
+      value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}
+    >
       {children}
     </ProductsContext.Provider>
   );

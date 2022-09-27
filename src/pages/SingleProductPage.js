@@ -35,14 +35,29 @@ const SingleProductPage = () => {
       }, 3000);
     }
   });
-  console.log(product);
+
   if (loading) {
     return <Loading />;
   }
   if (error) {
     return <Error />;
   }
-  return <h4>single product page</h4>;
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    reviews,
+    id: sku,
+    company,
+    images,
+  } = product;
+  return (
+    <Wrapper>
+      <PageHero title={name} product />
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.main`

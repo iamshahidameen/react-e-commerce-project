@@ -3,11 +3,18 @@ import { FaMapPin } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
-  const { main, setMain } = useState(images[0]);
-  console.log(main);
+  console.log('images arr', images);
+
+  const [main, setMain] = useState(images[0]);
+
   return (
     <Wrapper>
-      {/* <img src={main.url} alt="main image" className="main" /> */}
+      <img src={main.url} alt="main image" className="main" />
+      <div className="gallery">
+        {images.map((image, index) => {
+          return <img src={image.url} key={index} />;
+        })}
+      </div>
     </Wrapper>
   );
 };

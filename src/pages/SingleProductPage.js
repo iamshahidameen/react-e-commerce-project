@@ -53,9 +53,6 @@ const SingleProductPage = () => {
     company,
     images,
   } = product;
-  console.log('stock', stock);
-
-  console.log('PDP Images', images);
   return (
     <Wrapper>
       <PageHero title={name} product />

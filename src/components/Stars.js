@@ -6,16 +6,30 @@ const Stars = ({ stars, reviews }) => {
   {
     /* Stars with Array Method starts */
   }
-  // const tempStars = Array.from({ length: 5 }, (_, index));
-  // console.log(tempStars);
+  const tempStars = Array.from({ length: 5 }, (_, index) => {
+    const number = index + 0.5;
+    return (
+      <span key={index}>
+        {stars >= index + 1 ? (
+          <BsStarFill />
+        ) : stars >= number ? (
+          <BsStarHalf />
+        ) : (
+          <BsStar />
+        )}
+      </span>
+    );
+  });
+
   {
     /* Stars with Array Method Ends */
   }
   return (
     <Wrapper>
       <div className="stars">
+        {tempStars}
         {/* Old Manual Stars Method */}
-        <span>
+        {/* <span>
           {stars >= 1 ? (
             <BsStarFill />
           ) : stars >= 0.5 ? (
@@ -51,7 +65,7 @@ const Stars = ({ stars, reviews }) => {
           ) : (
             <BsStar />
           )}
-        </span>
+        </span> */}
         {/* End of Stars */}
       </div>
       <p className="reviews">({reviews} Customer Reviews)</p>

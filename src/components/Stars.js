@@ -3,49 +3,50 @@ import styled from 'styled-components';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 const Stars = ({ stars, reviews }) => {
   console.log(stars, 'stars', reviews, 'reviews');
+  {
+    /* Stars with Array Method starts */
+  }
+  // const tempStars = Array.from({ length: 5 }, (_, index));
+  // console.log(tempStars);
+  {
+    /* Stars with Array Method Ends */
+  }
   return (
     <Wrapper>
       <div className="stars">
-        {/* Stars Start */}
+        {/* Old Manual Stars Method */}
         <span>
           {stars >= 1 ? (
             <BsStarFill />
-          ) : stars <= 0.5 ? (
-            <BsStarHalf />
-          ) : (
-            <BsStar />
-          )}
-          {stars >= 1 ? (
-            <BsStarFill />
-          ) : stars <= 0.5 ? (
+          ) : stars >= 0.5 ? (
             <BsStarHalf />
           ) : (
             <BsStar />
           )}
           {stars >= 2 ? (
             <BsStarFill />
-          ) : stars <= 0.5 ? (
+          ) : stars >= 1.5 ? (
             <BsStarHalf />
           ) : (
             <BsStar />
           )}
           {stars >= 3 ? (
             <BsStarFill />
-          ) : stars <= 0.5 ? (
+          ) : stars >= 2.5 ? (
             <BsStarHalf />
           ) : (
             <BsStar />
           )}
           {stars >= 4 ? (
             <BsStarFill />
-          ) : stars <= 0.5 ? (
+          ) : stars >= 3.5 ? (
             <BsStarHalf />
           ) : (
             <BsStar />
           )}
           {stars >= 5 ? (
             <BsStarFill />
-          ) : stars <= 0.5 ? (
+          ) : stars >= 4.5 ? (
             <BsStarHalf />
           ) : (
             <BsStar />

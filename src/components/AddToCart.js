@@ -9,7 +9,23 @@ const AddToCart = ({ product }) => {
   const { id, stock, colors } = product;
 
   const [mainColor, setMainColor] = useState(colors[0]);
-  console.log(mainColor);
+  const [amount, setAmount] = useState(3);
+
+  const quantitySelector = (operation) => {
+    if (operation === 'add') {
+      if (amount >= stock) {
+        setAmount(stock);
+      } else {
+        setAmount(amount + 1);
+      }
+    } else {
+      if (amount <= 1) {
+        setAmount(1);
+      } else {
+        setAmount(amount - 1);
+      }
+    }
+  };
   return (
     <Wrapper>
       <div className="colors">
@@ -29,7 +45,12 @@ const AddToCart = ({ product }) => {
           })}
         </div>
       </div>
-      <div className="btn-container"></div>
+      <div className="btn-container">
+        <AmountButtons amount={amount} quantitySelector={quantitySelector} />
+        <Link to="/cart" className="btn">
+          Add to Cart
+        </Link>
+      </div>
     </Wrapper>
   );
 };

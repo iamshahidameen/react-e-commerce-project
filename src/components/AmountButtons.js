@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const AmountButtons = ({ amount, quantitySelector }) => {
-  console.log(amount);
   return (
     <Wrapper className="amount-btns">
       <button

@@ -15,7 +15,7 @@ import { useProductsContext } from './products_context';
 const initialState = {
   filtered_products: [],
   all_products: [],
-  grid_view: false,
+  grid_view: true,
 };
 
 const FilterContext = React.createContext();
@@ -26,8 +26,17 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
+
+  const setSortView = (view) => {
+    if (view === 'grid') {
+      dispatch({ type: SET_GRIDVIEW });
+    }
+    if (view === 'list') {
+      dispatch({ type: SET_LISTVIEW });
+    }
+  };
   return (
-    <FilterContext.Provider value={{ ...state }}>
+    <FilterContext.Provider value={{ ...state, setSortView }}>
       {children}
     </FilterContext.Provider>
   );

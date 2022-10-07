@@ -6,22 +6,24 @@ import { FaCheck } from 'react-icons/fa';
 
 const Filters = () => {
   const {
-    filters: { text, company, category, min_price, max_price, price, shipping },
+    filters: {
+      text,
+      company,
+      category,
+      color,
+      min_price,
+      max_price,
+      price,
+      shipping,
+    },
     updateFilters,
     clearFilters,
     all_products,
   } = useFilterContext();
+  console.log(category);
   const categories = getUniqueValues(all_products, 'category');
   const companies = getUniqueValues(all_products, 'company');
   const colors = getUniqueValues(all_products, 'colors');
-  // console.log(
-  //   'categories',
-  //   categories,
-  //   'companies',
-  //   companies,
-  //   'colors',
-  //   colors
-  // );
   return (
     <Wrapper>
       <div className="content">
@@ -74,6 +76,44 @@ const Filters = () => {
             </select>
           </div>
           {/* End of Companies */}
+          {/* Categories */}
+          <div className="form-control">
+            <h5>Color</h5>
+            <div className="colors">
+              {colors.map((col, index) => {
+                if (col === 'all') {
+                  return (
+                    <button
+                      name="color"
+                      onClick={updateFilters}
+                      data-color="all"
+                      className={`${
+                        color === 'all' ? 'all-btn active' : 'all-btn'
+                      }`}
+                    >
+                      all
+                    </button>
+                  );
+                }
+                return (
+                  <button
+                    key={index}
+                    onClick={updateFilters}
+                    type="button"
+                    name="color"
+                    style={{ backgroundColor: col }}
+                    className={`${
+                      color === col ? 'color-btn active' : 'color-btn'
+                    }`}
+                    data-color={col}
+                  >
+                    {color === col ? <FaCheck /> : null}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {/* end of categories */}
         </form>
       </div>
     </Wrapper>

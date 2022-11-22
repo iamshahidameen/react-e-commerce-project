@@ -11,12 +11,12 @@ import {
   Checkout,
   Error,
   PrivateRoute,
+  AuthWrapper,
 } from './pages';
 
 function App() {
   return (
-    <>
-      <h4>comfy sloth starter</h4>
+    <AuthWrapper>
       <Router>
         <Navbar />
         <Sidebar />
@@ -43,7 +43,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    </>
+    </AuthWrapper>
   );
 }
 
